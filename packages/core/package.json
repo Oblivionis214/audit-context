@@ -29,6 +29,7 @@
         "tree-sitter-python": "^0.21.0",
         "tree-sitter-c-sharp": "^0.21.0",
         "tree-sitter-rust": "^0.21.0",
+        "tree-sitter-solidity": "^1.2.13",
         "tree-sitter-typescript": "^0.21.0",
         "tree-sitter-scala": "^0.24.0",
         "typescript": "^5.0.0",
