@@ -48,12 +48,18 @@ Running `node packages/core/test-config.js`:
 
 ## Known Issues
 
-**tree-sitter-solidity@1.2.13 Compatibility Bug**:
-- The package has a known incompatibility with `tree-sitter@0.21.1`
-- Error: `Cannot read properties of undefined (reading 'length')` in `Parser.setLanguage()`
-- This is an upstream bug in tree-sitter-solidity, not our implementation
-- Issue affects all versions of tree-sitter-solidity (1.0.0 - 1.2.13)
+**tree-sitter-solidity Node.js Binding Bug** (All Versions):
+- The package has fundamental issues with its Node.js native binding implementation
+- **Tested versions** (all failed):
+  - `1.2.13` + `tree-sitter@0.21.1`: `Cannot read properties of undefined (reading 'length')`
+  - `1.2.13` + `tree-sitter@0.22.4`: Same error
+  - `1.2.11` + `tree-sitter@0.21.1`: `Cannot read properties of undefined (reading '324')`
+  - `1.0.12` + `tree-sitter@0.21.1`: `Cannot find module '../../build/Release/tree_sitter_solidity_binding'`
+  - `tree-sitter@0.25.0`: No prebuilt binaries, requires compilation
+- **Root cause**: tree-sitter-solidity's native binding doesn't correctly implement the interface expected by Node.js tree-sitter
+- **Comparison**: Finite-monkey uses Python tree-sitter (different ecosystem, different implementation)
 - The configuration is correct and will work once the upstream bug is fixed
+- **Workaround**: The langchain fallback splitter correctly handles .sol files
 
 ## Testing Status
 

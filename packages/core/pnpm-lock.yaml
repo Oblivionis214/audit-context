@@ -6,4 +6,47 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      tree-sitter:
+        specifier: ^0.22.0
+        version: 0.22.4
+      tree-sitter-solidity:
+        specifier: 1.0.12
+        version: 1.0.12
+
+packages:
+
+  nan@2.23.1:
+    resolution: {integrity: sha512-r7bBUGKzlqk8oPBDYxt6Z0aEdF1G1rwlMcLk8LCOMbOzf0mG+JUfUzG4fIMWwHWP0iyaLWEQZJmtB7nOHEm/qw==}
+
+  node-addon-api@8.5.0:
+    resolution: {integrity: sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==}
+    engines: {node: ^18 || ^20 || >= 21}
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
+    hasBin: true
+
+  tree-sitter-solidity@1.0.12:
+    resolution: {integrity: sha512-GFYeYRNuGTYRkMN4KENl5FIifdVAf7ZFRl5oVPHmBJa+N2w+sF1WxIb13YM5VXjPv2KkzSLARF6t1swFN6aQIA==}
+
+  tree-sitter@0.22.4:
+    resolution: {integrity: sha512-usbHZP9/oxNsUY65MQUsduGRqDHQOou1cagUSwjhoSYAmSahjQDAVsh9s+SlZkn8X8+O1FULRGwHu7AFP3kjzg==}
+
+snapshots:
+
+  nan@2.23.1: {}
+
+  node-addon-api@8.5.0: {}
+
+  node-gyp-build@4.8.4: {}
+
+  tree-sitter-solidity@1.0.12:
+    dependencies:
+      nan: 2.23.1
+
+  tree-sitter@0.22.4:
+    dependencies:
+      node-addon-api: 8.5.0
+      node-gyp-build: 4.8.4
