@@ -1,0 +1,53 @@
+{
+    "name": "audit-context",
+    "version": "0.1.0",
+    "description": "Enhanced Claude Context for Web3 Auditors - Semantic code search with security-focused features",
+    "private": true,
+    "scripts": {
+        "build": "pnpm -r build",
+        "build:core": "pnpm --filter @audit/context-core build",
+        "dev": "pnpm -r dev",
+        "dev:core": "pnpm --filter @audit/context-core dev",
+        "clean": "pnpm -r clean",
+        "lint": "pnpm -r lint",
+        "lint:fix": "pnpm -r run lint:fix",
+        "typecheck": "pnpm -r run typecheck",
+        "release:core": "pnpm --filter @audit/context-core... run build && pnpm --filter @audit/context-core publish --access public --no-git-checks"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@typescript-eslint/eslint-plugin": "^8.31.1",
+        "@typescript-eslint/parser": "^8.31.1",
+        "assert": "^2.1.0",
+        "browserify-zlib": "^0.2.0",
+        "eslint": "^9.25.1",
+        "https-browserify": "^1.0.0",
+        "os-browserify": "^0.3.0",
+        "rimraf": "^6.0.1",
+        "stream-http": "^3.2.0",
+        "tree-sitter-cli": "^0.25.6",
+        "typescript": "^5.8.3",
+        "url": "^0.11.4",
+        "vm-browserify": "^1.1.2"
+    },
+    "engines": {
+        "node": ">=20.0.0",
+        "pnpm": ">=10.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Oblivionis214/audit-context.git"
+    },
+    "license": "MIT",
+    "author": "Oblivionis214",
+    "keywords": [
+        "web3",
+        "security",
+        "audit",
+        "solidity",
+        "smart-contracts",
+        "code-search",
+        "semantic-search",
+        "vector-database"
+    ]
+}
